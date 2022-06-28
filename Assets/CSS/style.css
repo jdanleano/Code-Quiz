@@ -1,5 +1,5 @@
 body {
-    background: url(wallpaper.jpg) no-repeat fixed center;
+    background: url("../Images/wallpaper.jpg") no-repeat fixed center;
     font-family: 'Roboto', sans-serif;
     font-size: 27px;
     color: white;

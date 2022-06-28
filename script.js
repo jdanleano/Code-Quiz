@@ -1,3 +1,4 @@
+// This is where I declare my variables for the questions, querySelect link to my HTML file, and variable for my timer
 var questions = [
     {
         question: "What kind of language is Javascript?",
@@ -41,6 +42,7 @@ var holdInterval = 0;
 var penalty = 10;
 var createUl = document.createElement("ul");
 
+// This event listener is for the timer to start when the start button (test your might button is clicked). This will also start the give question function right after to generate the first question. 
 startTime.addEventListener("click", function () {
     if (holdInterval === 0) {
         holdInterval = setInterval(function () {
@@ -57,10 +59,12 @@ startTime.addEventListener("click", function () {
     giveQuestion(questionIndex)
 });
 
+// This is the event listener I added for the clear high score button to clear once clicked. 
 clearScoreBtn.addEventListener("click", function () {
     localStorage.clear();
 })
 
+// This function below is added to generate the questions variable into a list item for the choices. It is also being placed in the area of the HTML desiganted for the questions. A for look is also used to generage the questions and choices. 
 function giveQuestion(questionIndex) {
     questionsEl.innerHTML = "";
     createUl.innerHTML = "";
@@ -80,6 +84,7 @@ function giveQuestion(questionIndex) {
     })
 }
 
+// This function is to compare the selected answer if it is correct or incorrect. A message is also generated in a created div where is say Congratulations once the quis is completed. 
 function compare(event) {
     var element = event.target;
 
@@ -106,6 +111,7 @@ function compare(event) {
     questionsEl.appendChild(createDiv);
 }
 
+// This function is run once the last question is answered and a final score is generated. This includes an H1, a message stating your final score, an input box for initials to be entered, and a submit button that will add your initials and score to localStorage.
 function completed() {
     questionsEl.innerHTML = "";
     currentTime.innerHTML = "";
@@ -150,6 +156,7 @@ function completed() {
 
     questionsEl.appendChild(submitBtn);
 
+    // This is the event listener that will view the high scores from localStorage.
     highScoreBtn.addEventListener("click", function () {
 
         var quizUsers = "";
@@ -171,6 +178,7 @@ function completed() {
 
     })
 
+    // This is the event listener for the submit button that will submit and log the initials and score as a string to localStorage.
     submitBtn.addEventListener("click", function () {
 
         var quizLocalStorage = "quiz";
@@ -180,6 +188,7 @@ function completed() {
         quizUserDetails = quizLocalStorage + createInput.value
         value = [quizUserDetails, timeLeft]
 
+        //This test is added so the rest of the high scores would load correctly in localStorage.
         if (!localStorage.length) {
             localStorage.setItem("test", "test");
         }
