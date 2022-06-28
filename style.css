@@ -1,0 +1,25 @@
+body {
+    background: url(wallpaper.jpg) no-repeat fixed center;
+    font-family: 'Roboto', sans-serif;
+    font-size: 27px;
+    color: white;
+    text-shadow: 4px 2px 0 #000,
+        2px 1px 0 #000,
+        3px -1px 0 #000;
+}
+
+#top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#container {
+    margin: 200px 20% 20% 20%;
+    display: flex;
+
+}
+
+li {
+    list-style: upper-alpha;
+}

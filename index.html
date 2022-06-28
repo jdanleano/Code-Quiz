@@ -1,12 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <title>Joseph's Java Kombat</title>
 </head>
+
 <body>
-    
+    <header id="top">
+        <div id="topBtns">
+            <button class="btnHighScore" id="view-high-scores">View High Scores</button>
+            <button class="btnClearScore" id="clear-high-scores" value="reset">Clear High Scores</button>
+        </div>
+        <div id="timer">Time: 100</div>
+    </header>
+
+    <div id="container">
+        <div id="questionsEl">
+            <h1>Java Kombat!</h1>
+            <p>You must answer the following questions about Java script within the given 100 second time limit! If you
+                answer a
+                question wrong, Shang Tsung will penalize your score by 10 seconds, slowly getting closer to your
+                FATALITY!</p>
+            <ul id="choices"></ul>
+            <button class="btn" id="start">Test Your Might!</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
+
 </html>
